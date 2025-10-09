@@ -1,6 +1,6 @@
 📝 ToDo App Redux
 
-Une application ToDo List construite avec React et Redux, permettant d’ajouter, modifier, supprimer et filtrer des tâches.
+Une application ToDo List construite avec React et Redux, permettant d’ajouter, modifier et filtrer des tâches.
 
 🎯 Fonctionnalités
 
