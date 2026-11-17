@@ -1,132 +1,72 @@
-📝 ToDo App Redux
+# 📝 ToDo App Redux
 
-Une application ToDo List construite avec React et Redux, permettant d’ajouter, modifier et filtrer des tâches.
+Une application ToDo List construite avec React et Redux, permettant d'ajouter, modifier et filtrer des tâches.
+Malgré le nom du dépôt, il s'agit bien d'une ToDo list.
 
-🎯 Fonctionnalités
+## 🎯 Fonctionnalités
 
-Ajouter une nouvelle tâche
+- Ajouter une nouvelle tâche
+- Marquer une tâche comme effectuée / non effectuée
+- Modifier la description d'une tâche
+- Filtrer les tâches : Toutes / Effectuées / Non effectuées
+- Gestion de l'état global avec Redux
+- Architecture organisée : actions, reducers, store, constants
 
-Marquer une tâche comme effectuée / non effectuée
+## 📁 Structure du projet
 
-Modifier la description d’une tâche
-
-Supprimer une tâche
-
-Filtrer les tâches : Toutes / Effectuées / Non effectuées
-
-Gestion de l’état global avec Redux
-
-Architecture organisée : actions, reducers, store, constants
-
-📁 Structure du projet
+```
 src/
-│
-├── js/
-│   ├── actions/
-│   │   └── taskActions.js
-│   │
-│   ├── reducers/
-│   │   └── taskReducer.js
-│   │
-│   ├── store/
-│   │   └── store.js
-│   │
-│   └── constants/
-│       └── taskConstants.js
-│
+├── JS/
+│   ├── actions/taskActions.js
+│   ├── constants/taskConstants.js
+│   ├── reducers/taskReducers.js
+│   └── store/store.js
 ├── components/
 │   ├── AddTask.js
-│   ├── TaskList.js
+│   ├── Filter.js
 │   ├── Task.js
-│   └── Filter.js
-│
+│   └── TaskList.js
 ├── App.js
 └── index.js
+```
 
-⚙️ Installation
+## ⚙️ Installation
 
-Cloner le projet :
-
-git clone <URL_DU_PROJET>
-cd todolist
-
-
-Installer les dépendances :
-
+```bash
+git clone https://github.com/eliedvp/React-redux-blog.git
+cd React-redux-blog
 npm install
-
-
-Lancer le projet :
-
 npm start
+```
 
+L'application s'ouvre automatiquement sur http://localhost:3000.
 
-L’application s’ouvre automatiquement sur http://localhost:3000
+## 🛠️ Technologies utilisées
 
-🛠️ Technologies utilisées
+React 19, Redux (`createStore`), React-Redux 9 (`useSelector`, `useDispatch`), JavaScript ES6+, HTML & CSS (styles en ligne), Create React App.
 
-React 18+
+## 💻 Utilisation
 
-Redux
+- **Ajouter une tâche** : saisir le texte dans le champ et cliquer sur Ajouter.
+- **Marquer une tâche comme effectuée / non effectuée** : cliquer sur le bouton « Effectuée » (ou « Non effectuée ») de la tâche.
+- **Modifier une tâche** : cliquer sur l'icône ✏️, modifier le texte et cliquer sur ✅ pour valider.
+- **Filtrer les tâches** : cliquer sur Toutes, Effectuées ou Non effectuées.
 
-React-Redux
+## 🔧 Explication du code
 
-JavaScript ES6+
+- `actions/` : fonctions qui créent les actions Redux (`addTask`, `toggleTask`, `editTask`, `setFilter`)
+- `reducers/` : le reducer (`taskReducers.js`) qui modifie l'état en fonction des actions
+- `store/` : configuration du store Redux
+- `constants/` : types d'actions, pour éviter les fautes de frappe
+- `components/` : composants React ; `index.js` est le point d'entrée qui inclut le `Provider` Redux
 
-HTML & CSS
+## 🔍 Améliorations possibles
 
-💻 Utilisation
+- Suppression d'une tâche (bouton 🗑️)
+- Sauvegarde des tâches dans localStorage
+- Priorités ou dates d'échéance
+- Tests unitaires avec Jest ou React Testing Library
 
-Ajouter une tâche
+## 📝 Auteur
 
-Saisir le texte dans le champ et cliquer sur Ajouter.
-
-Marquer une tâche comme effectuée / non effectuée
-
-Cliquer sur la description de la tâche.
-
-Modifier une tâche
-
-Cliquer sur l’icône ✏️, modifier le texte et cliquer ✅ pour valider.
-
-Supprimer une tâche
-
-Cliquer sur l’icône 🗑️ à côté de la tâche.
-
-Filtrer les tâches
-
-Cliquer sur Toutes, Effectuées ou Non effectuées pour afficher le filtre désiré.
-
-🔧 Explication du code
-
-actions/ : contient les fonctions qui créent les actions Redux (addTask, toggleTask, editTask, deleteTask, setFilter)
-
-reducers/ : contient le reducer (taskReducer.js) qui modifie l’état en fonction des actions
-
-store/ : configuration du store Redux et connexion avec Redux DevTools
-
-constants/ : définition des types d’actions pour éviter les erreurs
-
-components/ : tous les composants React (AddTask, TaskList, Task, Filter)
-
-App.js : container principal qui inclut tous les composants
-
-index.js : point d’entrée, inclut le Provider Redux
-
-🔍 Améliorations possibles
-
-Sauvegarde des tâches dans localStorage
-
-Ajout de priorités ou dates d’échéance
-
-Support pour Undo / Restore après suppression
-
-Amélioration du design / UX avec Tailwind ou Bootstrap
-
-Tests unitaires avec Jest ou React Testing Library
-
-📝 Auteur
-
-Elie Adiko
-
-Projet réalisé dans le cadre d’un apprentissage React + Redux
+Elie Adiko — projet réalisé dans le cadre d'un apprentissage React + Redux pendant la formation GoMyCode.
